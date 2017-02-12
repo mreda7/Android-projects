@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="action_bar_title">Mes radios</string>
+    <string name="no_connexion">Aucune connexion</string>
+
+</resources>
