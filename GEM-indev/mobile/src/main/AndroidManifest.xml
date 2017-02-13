@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2016 Substance Mobile
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.animbus.music">
+
+    <!--
+      ___ ___ __  __   ___ _
+     / __| __|  \/  | | _ \ |__ _ _  _ ___ _ _
+    | (_ | _|| |\/| | |  _/ / _` | || / -_) '_|
+     \___|___|_|  |_| |_| |_\__,_|\_, \___|_|
+                                  |__/
+    -->
+
+    <!-- To be able to hold the partial wake lock for playback when the screen is off -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Used to read the media library -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- Used for donations -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+    <!-- Used for restarting GEM -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+
+    <application
+        android:name=".GEMApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_srini_black"
+        android:label="@string/app_name_actual"
+        android:theme="@style/AppTheme.Faithful"
+        tools:ignore="AllowBackup">
+
+        <!-- Home activity in GEM -->
+        <activity
+            android:name=".ui.activity.mainScreen.MainScreen"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.MUSIC_PLAYER" />
+
+                <category android:name="android.intent.category.APP_MUSIC" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="audio/*" />
+            </intent-filter>
+        </activity>
+
+        <!-- Icons -->
+        <activity-alias
+            android:name=".activities.app.icon.srini.black"
+            android:enabled="true"
+            android:icon="@mipmap/ic_launcher_srini_black"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.srini.white"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_srini_white"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.srini.red"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_srini_red"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.srini.slate"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_srini_slate"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.srini.green"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_srini_green"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.srini.blue"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_srini_blue"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.alex.black"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_alex_black"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.alex.white"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_alex_white"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.alex.color"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_alex_color"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.jaka.black"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_jaka_dark"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.jaka.white"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_jaka_light"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.nguyen.orange"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_nguyen_orange"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.nguyen.green"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_nguyen_green"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+        <activity-alias
+            android:name=".activities.app.icon.nguyen.red"
+            android:enabled="false"
+            android:icon="@mipmap/ic_launcher_nguyen_red"
+            android:label="@string/app_name"
+            android:targetActivity=".ui.activity.mainScreen.MainScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <!-- Activity used to request permissions -->
+        <activity
+            android:name=".ui.activity.setup.SetupActivity"
+            android:label="@string/app_name_actual" />
+
+        <!-- Settings Screen -->
+        <activity
+            android:name=".ui.activity.settings.Settings"
+            android:label="@string/title_activity_settings" />
+
+        <!-- Choose Icon screen -->
+        <activity
+            android:name=".ui.activity.settings.chooseIcon.ChooseIcon"
+            android:label="@string/title_activity_choose_icon"
+            android:parentActivityName=".ui.activity.settings.Settings" />
+
+        <!-- Widget -->
+        <receiver android:name=".ui.MusicPlaybackWidget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/music_playback_widget_info" />
+        </receiver>
+
+        <!-- Playback Service -->
+        <!--
+        <service android:name=".media.MediaService">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </service>
+        -->
+
+        <service android:name=".media.stable.MediaService">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </service>
+
+        <!-- The media button receiver that handles media button intents -->
+        <receiver android:name="android.support.v4.media.session.MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Shown when you tap an album anywhere in the app -->
+        <activity
+            android:name=".ui.activity.albumDetails.AlbumDetails"
+            android:label="@string/title_activity_album_details" />
+
+        <!-- The now playing screen -->
+        <activity
+            android:name=".ui.activity.nowPlaying.NowPlaying"
+            android:label="@string/title_activity_now_playing"
+            android:launchMode="singleTop" />
+
+        <!-- Used to report issues to GitHub -->
+        <activity
+            android:name=".ui.activity.issue.IssueReportingActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <!-- About Screen -->
+        <activity
+            android:name=".ui.activity.settings.About"
+            android:label="@string/title_activity_about" />
+
+        <!-- Search Screen -->
+        <activity
+            android:name=".ui.activity.search.SearchActivity"
+            android:label="@string/title_activity_search"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/search_config" />
+        </activity>
+
+        <!-- Opens when you click on a playlist in the home activity -->
+        <activity android:name=".ui.activity.playlistDetails.PlaylistDetails" />
+    </application>
+
+</manifest>

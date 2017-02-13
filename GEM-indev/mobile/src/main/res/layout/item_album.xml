@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2016 Substance Mobile
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <data class="com.animbus.music.ui.ItemAlbum">
+        <variable name="album" type="com.animbus.music.media.objects.Album" />
+    </data>
+    <FrameLayout
+        android:id="@+id/AlbumGridItemRootView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/AlbumArtGridItemLayoutContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_micro"
+            android:orientation="vertical">
+
+            <com.animbus.music.ui.custom.view.SquareImageViewWidth_Based
+                android:id="@+id/AlbumArtGridItemAlbumArt"
+                android:layout_width="match_parent"
+                android:layout_height="0dp" />
+
+            <LinearLayout
+                android:id="@+id/AlbumInfoToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:orientation="vertical"
+                android:tag="ate_ignore"
+                android:padding="@dimen/margin_medium">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="100" />
+
+                <Space
+                    android:id="@+id/temp"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
+                <TextView
+                    android:id="@+id/AlbumTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="@{album.getTitle, default=TITLE}"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/AlbumArtist"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:tag="ate_ignore"
+                    android:text="@{album.getAlbumArtistName, default=ARTIST}"
+                    android:textSize="12sp" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="100" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/AlbumGridItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/ripple" />
+    </FrameLayout>
+</layout>

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2016 Substance Mobile
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.activity.nowPlaying.NowPlaying">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/now_playing_collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="?attr/colorPrimary"
+            app:title="@string/playback_queue">
+
+            <com.animbus.music.ui.custom.view.SquareImageViewWidth_Based
+                android:id="@+id/now_playing_album_art"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false"
+                app:layout_collapseMode="parallax" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/gradient_black_ontop"
+                android:fitsSystemWindows="false"
+                app:layout_collapseMode="pin"
+                android:id="@+id/now_playing_toolbar_text_protection" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
+
+                <com.animbus.music.ui.custom.view.SquareImageViewWidth_Based
+                    android:id="@+id/now_playing_square_spacer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/ripple"
+                    android:clickable="true" />
+
+                <LinearLayout
+                    android:id="@+id/now_playing_controls_root"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary"
+                    android:orientation="vertical"
+                    app:layout_collapseMode="none">
+
+                    <com.animbus.music.ui.custom.view.MusicControlsView
+                        android:id="@+id/now_playing_media_controller_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/colorPrimary">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/listViewSizeBig"
+                        android:background="?attr/ripple"
+                        android:orientation="horizontal"
+                        android:clickable="true">
+
+                        <com.animbus.music.ui.custom.view.SquareImageViewHeight_Based
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:visibility="visible"
+                            android:src="@drawable/ic_equalizer_24dp"
+                            android:id="@+id/now_playing_eq_icon"
+                            android:cropToPadding="true"
+                            android:padding="@dimen/margin_small" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:textColor="?android:attr/textColorPrimary"
+                                android:textSize="16sp"
+                                android:id="@+id/current_song_title"
+                                android:singleLine="true" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:ellipsize="end"
+                                android:textColor="?android:attr/textColorSecondary"
+                                android:textSize="14sp"
+                                android:id="@+id/current_song_artist"
+                                android:layout_marginStart="@dimen/margin_small"
+                                android:layout_marginEnd="@dimen/margin_small"
+                                android:singleLine="true" />
+
+                        </LinearLayout>
+
+                        <FrameLayout
+                            android:id="@+id/now_playing_favorite_icon_root"
+                            android:layout_width="@dimen/listViewSizeBig"
+                            android:layout_height="@dimen/listViewSizeBig"
+                            android:padding="@dimen/margin_small"
+                            android:visibility="gone"
+                            android:background="?attr/colorPrimary">
+
+                            <ImageView
+                                android:id="@+id/now_playing_favorite_icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:background="?attr/ripple_circle"
+                                android:padding="@dimen/margin_medium"
+                                android:src="@drawable/ic_repeat_black_48dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/now_playing_repeat_icon_root"
+                            android:layout_width="@dimen/listViewSizeBig"
+                            android:layout_height="@dimen/listViewSizeBig"
+                            android:padding="@dimen/margin_small">
+
+                            <ImageView
+                                android:id="@+id/now_playing_repeat_icon"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:background="?attr/ripple_circle"
+                                android:padding="@dimen/margin_medium"
+                                android:src="@drawable/ic_repeat_black_48dp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_back" />
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/now_playing_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</android.support.design.widget.CoordinatorLayout>

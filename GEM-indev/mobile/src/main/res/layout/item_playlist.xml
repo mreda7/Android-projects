@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2016 Substance Mobile
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<layout>
+    <data class="com.animbus.music.ui.ItemPlaylist">
+        <variable name="playlist" type="com.animbus.music.media.objects.Playlist" />
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/listViewSizeBig"
+        android:background="?attr/ripple"
+        android:orientation="horizontal">
+
+        <com.animbus.music.ui.custom.view.SquareImageViewHeight_Based
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_playlist_24dp"
+            android:tint="?android:attr/textColorSecondary"
+            android:layout_margin="@dimen/margin_medium"
+            android:padding="@dimen/margin_small"
+            android:id="@+id/icon" />
+
+        <!--This frame layout is just there to fix an issue with DataBinding-->
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:tag="ate_ignore" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?android:attr/textColorPrimary"
+                android:text="@{playlist.getName, default=Name}" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+</layout>

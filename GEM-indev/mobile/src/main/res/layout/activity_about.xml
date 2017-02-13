@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2016 Substance Mobile
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~ http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.activity.settings.About">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:navigationIcon="@drawable/ic_back"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_medium">
+
+            <android.support.v7.widget.CardView
+                style="?attr/cardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.animbus.music.ui.custom.view.SquareImageViewHeight_Based
+                                android:id="@+id/about_icon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:src="@mipmap/ic_launcher_srini_black" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/margin_small"
+                                android:text="@string/app_name_actual"
+                                android:textAppearance="?android:attr/textAppearanceSmall"
+                                android:textColor="?android:attr/textColorSecondary" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/listViewSizeBig"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:id="@+id/about_source_code">
+
+                        <com.animbus.music.ui.custom.view.SquareImageViewHeight_Based
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:padding="@dimen/margin_small"
+                            android:src="@drawable/ic_code_24dp"
+                            android:id="@+id/about_code_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/settings_source_code" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/listViewSizeBig"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:id="@+id/about_base_source_code">
+
+                        <com.animbus.music.ui.custom.view.SquareImageViewHeight_Based
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:padding="@dimen/margin_small"
+                            android:src="@mipmap/ic_notificstaion_srini"
+                            android:id="@+id/about_code_og_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/settings_source_base_code" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/listViewSizeBig"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:id="@+id/about_version">
+
+                        <com.animbus.music.ui.custom.view.SquareImageViewHeight_Based
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:padding="@dimen/margin_small"
+                            android:src="@drawable/ic_info_24dp"
+                            android:id="@+id/about_version_icon" />
+
+                        <TextView
+                            android:id="@+id/about_version_text_view"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            tools:text="VERSION" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/listViewSizeBig"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:orientation="horizontal"
+                        android:id="@+id/about_play">
+
+                        <com.animbus.music.ui.custom.view.SquareImageViewHeight_Based
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/margin_medium"
+                            android:padding="@dimen/margin_small"
+                            android:src="@drawable/ic_shop_black_24dp"
+                            android:id="@+id/about_play_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="@string/about_visit_play" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                style="?attr/cardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_medium">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:id="@+id/about_adrian">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_Adrian"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_created"
+                            android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:id="@+id/about_substance">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_Substance"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_managed"
+                            android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/about_libraries_header"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:tag="text_secondary" />
+
+            <android.support.v7.widget.CardView
+                style="?attr/cardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:padding="@dimen/margin_medium"
+                        android:id="@+id/about_support">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/about_appcompat"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:padding="@dimen/margin_medium"
+                        android:id="@+id/about_palette">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/about_palette"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:padding="@dimen/margin_medium"
+                        android:id="@+id/about_glide">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/about_glide"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:padding="@dimen/margin_medium"
+                        android:id="@+id/about_gitty">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/about_gitty"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:padding="@dimen/margin_medium"
+                        android:id="@+id/about_appintro">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/about_appintro"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:padding="@dimen/margin_medium"
+                        android:id="@+id/about_fast_scroll">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/about_fast_scroll"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:padding="@dimen/margin_medium"
+                        android:id="@+id/about_material_dialogs">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/about_dialogs"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary" />
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_small"
+                android:layout_marginTop="@dimen/margin_small"
+                android:text="@string/about_thanks_header"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?android:attr/textColorSecondary"
+                android:id="@+id/textView11"
+                android:tag="text_secondary" />
+
+            <android.support.v7.widget.CardView
+                style="?attr/cardStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:id="@+id/about_srini">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/settings_choose_icon_srini"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_icon"
+                            android:layout_gravity="center_horizontal" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:id="@+id/about_alex">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/settings_choose_icon_alex"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_icon"
+                            android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:id="@+id/about_jaka">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/settings_choose_icon_jaka"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_icon"
+                            android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:id="@+id/about_nguyen">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/settings_choose_icon_nguyen"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_icon"
+                            android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:id="@+id/about_karim">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_Karim"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_helped"
+                            android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/margin_medium"
+                        android:background="?attr/ripple"
+                        android:clickable="true"
+                        android:id="@+id/about_neel">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_Neel"
+                            android:layout_gravity="center_horizontal" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceSmall"
+                            android:textColor="?android:attr/textColorSecondary"
+                            android:text="@string/about_helped"
+                            android:layout_gravity="center_horizontal" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <!--This fixes the bug where there isn't a shadow under the previous cardview-->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_tiny" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.design.widget.CoordinatorLayout>
