@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Set butterKnife
         ButterKnife.bind(this);
 
         // Set up the toolbar.
@@ -50,6 +51,7 @@ public class MainActivity extends AppCompatActivity
 
         navigationView.setNavigationItemSelectedListener(this);
 
+        // Set the fragment
         StationsFragment stationsFragment =
                 (StationsFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
         if (stationsFragment == null) {
