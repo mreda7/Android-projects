@@ -82,15 +82,12 @@ public class StationsFragment extends Fragment implements StationsContract.View 
     @Override
     public void showNoConnexion() {
         mStationsRecyclerView.setVisibility(View.GONE);
-       // mNoStationsView.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void showStations(List<Station> stationList) {
         mStationsAdapter.replaceData(stationList);
-
         mStationsRecyclerView.setVisibility(View.VISIBLE);
-       // mNoStationsView.setVisibility(View.GONE);
     }
 
     @Override
